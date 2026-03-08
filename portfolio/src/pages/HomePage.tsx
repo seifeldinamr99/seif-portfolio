@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
 import { ProjectCard } from "../components/ProjectCard";
 import { Modal } from "../components/Modal";
-import MeImg from "../assets/Me.png";
+import MeImg from "../assets/Me.webp";
 
 export function HomePage() {
   const featured = projects.slice(0, 3);
