@@ -9,6 +9,11 @@ export function Header() {
     setOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     isActive ? "nav-link active" : "nav-link";
 
@@ -23,27 +28,26 @@ export function Header() {
           className="mobile-menu-button"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
+          onClick={() => setOpen((v) => !v)}
         >
-          <span className="hamburger" />
+          <span className={`hamburger${open ? " hamburger--open" : ""}`} />
         </button>
 
-        <nav className={`nav ${open ? "nav--open" : ""}`}>
-          <NavLink to="/" className={linkClass} end>
-            Home
-          </NavLink>
-          <NavLink to="/projects" className={linkClass}>
-            Projects
-          </NavLink>
-          <NavLink to="/about" className={linkClass}>
-            About
-          </NavLink>
-          <NavLink to="/resume" className={linkClass}>
-            Resume
-          </NavLink>
-          <NavLink to="/contact" className={linkClass}>
-            Contact
-          </NavLink>
+        {open && (
+          <div
+            className="nav-overlay"
+            onClick={() => setOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+
+        <nav className={`nav${open ? " nav--open" : ""}`}>
+          <span className="nav-brand">Seif ElTohamy</span>
+          <NavLink to="/" className={linkClass} end>Home</NavLink>
+          <NavLink to="/projects" className={linkClass}>Projects</NavLink>
+          <NavLink to="/about" className={linkClass}>About</NavLink>
+          <NavLink to="/resume" className={linkClass}>Resume</NavLink>
+          <NavLink to="/contact" className={linkClass}>Contact</NavLink>
         </nav>
       </div>
     </header>
