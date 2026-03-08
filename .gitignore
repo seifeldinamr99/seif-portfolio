@@ -1,0 +1,17 @@
+# Node artifacts
+node_modules/
+
+# Build output
+portfolio/dist/
+
+# Local env
+.env
+
+# Editor/IDE
+.vscode/
+.history/
+
+# Git submodules (avoid embedding full cloned repos)
+CopilotV2/
+ecom/
+robo-advisor/
