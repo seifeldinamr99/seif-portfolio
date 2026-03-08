@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
 import { ProjectCard } from "../components/ProjectCard";
 import { Modal } from "../components/Modal";
-import meImage from "../assets/Me.png";
 
 export function HomePage() {
   const featured = projects.slice(0, 3);
@@ -38,7 +37,7 @@ export function HomePage() {
             </div>
           </div>
           <div className="hero-image" aria-hidden="true">
-            <img src={meImage} alt="Seif ElTohamy" className="hero-photo" />
+            <div className="hero-graphic" />
           </div>
         </div>
       </section>

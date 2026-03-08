@@ -355,6 +355,52 @@ a:hover {
   margin-top: 2rem;
 }
 
+/* Loading overlay shown while the app is initializing */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(11, 10, 17, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.loading-screen__content {
+  text-align: center;
+  color: var(--text);
+}
+
+.loading-screen__spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid rgba(255, 255, 255, 0.15);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 0.75rem;
+}
+
+.loading-screen__message {
+  margin: 0;
+  font-weight: 600;
+  color: rgba(244, 244, 248, 0.9);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ensure hero buttons are centered on smaller screens */
+@media (max-width: 720px) {
+  .hero-actions {
+    justify-content: center;
+  }
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;
