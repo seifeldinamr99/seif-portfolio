@@ -1,0 +1,199 @@
+# Personal Web Portfolio Plan
+
+This plan follows the *WEB PORTFOLIO PLANNING WORKSHEET* structure and will be the basis for building your portfolio website.
+
+---
+
+## 1) Target User (Audience)
+
+**Primary visitor:** HR recruiter / hiring manager
+
+**What they want in 10 seconds:**
+- Your name, role/field, and at least one strong project or skill.
+
+**What would confuse/frustrate them:**
+- No clear job title or area of expertise on the homepage.
+- Too much text before reaching work samples.
+- Broken links or missing project pages.
+- No contact info or hard-to-find contact page.
+- A cluttered layout that buries the important information.
+
+---
+
+## 2) Purpose & Homepage Message
+
+**One-sentence purpose:**
+> My portfolio supports HR recruiters and hiring managers by showing my technical skills, completed projects, and professional background in a clear and accessible format.
+
+**Homepage slogan (short & clear):**
+> Turning skills into solutions
+
+**First 50 words (scannable intro paragraph):**
+> Hi, I'm Seif — a computer science student with hands-on experience in business and marketing. I build systems that are practical, clean, and purposeful. Browse my projects, learn about my background, or get in touch — I'd love to connect.
+
+---
+
+## 3) Site Structure (Information Architecture)
+
+**Main pages (nodes):**
+- Home
+- About
+- Projects
+- Contact
+- Resume
+
+**Flowchart / hierarchy (sketch below):**
+
+```
+Home
+├── About
+├── Projects
+│   ├── [Project A]
+│   ├── [Project B]
+│   └── [Project C]
+├── Resume
+└── Contact
+```
+
+> 📝 **Action needed:** Fill in your actual project names in the site structure above.
+
+---
+
+## 4) Homepage Wireframe (Layout)
+
+**Key sections to include on the homepage:**
+1. Header with name + role + nav links
+2. Hero section (name, role, slogan, CTA button “View My Work”)
+3. Featured project cards (3–4 top projects)
+4. Skills / technologies section
+5. Quick About blurb
+6. Footer with contact links + social / resume link
+
+> 📝 **Action needed:** If you want a specific layout style (cards, timeline, split screen, etc.), add notes here.
+
+---
+
+## 5) Navigation & Usability
+
+**Navigation plan:**
+- Persistent top nav bar on every page with: Home, About, Projects, Resume, Contact.
+- Logo/name always links back to Home.
+- “View My Work” button on Home that scrolls/links to Projects.
+
+**Usability checks:**
+- Can users return home easily? ✅
+- Can they reach important content in ≤4 clicks? ✅
+- Is layout uncluttered? ✅
+
+---
+
+## 6) Performance & Responsiveness Plan
+
+**Fast loading:**
+- Use compressed images (<200KB each).
+- Avoid heavy animations and large JavaScript bundles.
+- Build as a static site (plain HTML/CSS/JS) or simple static site generator.
+
+**Mobile friendly:**
+- Single-column stacking layout.
+- Use responsive CSS (flex/grid + media queries).
+- Test on phone and small screens.
+
+---
+
+## 7) Accessibility & Global Awareness
+
+**Accessibility checklist:**
+- Add alt text for all images.
+- Use readable font sizes (14pt+ / 16px+ for body).
+- Ensure high-contrast text (e.g., #2C2C2C on #F9F9F9).
+- Use descriptive link text (e.g., “View my Projects” rather than “click here”).
+
+---
+
+## 8) Creativity & Differentiation
+
+**What makes this portfolio unique:**
+- Designed for recruiters with limited time.
+- Top information (name, role, top project) visible without scrolling.
+- Each section answers: Who are you? What can you do? Can I contact you easily?
+
+**Visual style:**
+- Minimalist with card-based project display.
+- Clean and professional, with subtle visual structure.
+
+---
+
+## 🔍 Project Information (Current Projects)
+
+1. **Robo Advisor Platform**
+   - A full-stack robo-advisor system that combines portfolio optimization, risk profiling, KYC verification, and analytics in a single platform.
+   - Technologies: Django + Django REST Framework, React + Vite, TypeScript, Tailwind CSS, PostgreSQL, Celery + Redis, PyTorch (DRL), Supabase Auth, Docker.
+   - Role: Full-stack development (backend API, frontend SPA, Dockerized deployment, DRL optimization workflows, eKYC integration).
+   - Repo: `seifeldinamr99/robo-advisor`
+
+2. **SKU Sales Summary (Ecom Analytics)**
+   - A FastAPI-based analytics tool that parses sales Excel sheets (SKU-level sales data) and generates revenue reports with filters.
+   - Technologies: FastAPI, SQLAlchemy, SQLite/PostgreSQL (configurable), OpenPyXL, Python, Docker.
+   - Role: Backend API design, Excel data parsing, report aggregation, authentication, and deployment scripting.
+   - Repo: `seifeltohamy/ecom`
+
+3. **Meta Ads Management Platform (CopilotV2)**
+   - A multi-phase ad management system for Meta/Shopify with campaign sync, recommendations, and creative generation planning.
+   - Technologies: Node.js, Express, TypeScript, React + Vite, Prisma, Redis, Shopify + Meta APIs, monorepo structure.
+   - Role: Architecture design, frontend + backend integration, API orchestration, planning docs, and phased feature roadmap.
+   - Repo: `seifeldinamr99/CopilotV2`
+
+> With these projects identified, the next step is to create the portfolio pages and project cards (including key screenshots or links) based on the selected highlights.
+
+---
+
+## 🏗️ Implementation Plan (React + Vite)
+
+### 1) Scaffold the project
+1. From the workspace root, run:
+
+```bash
+npm create vite@latest portfolio -- --template react-ts
+```
+
+2. Install dependencies:
+
+```bash
+cd portfolio
+npm install
+```
+
+### 2) Set up project structure (recommended)
+- `src/data/projects.ts` — export an array of project metadata (name, description, tech, links)
+- `src/components/` — reusable UI components (Header, Footer, ProjectCard, Section)
+- `src/pages/` — page components (HomePage, ProjectsPage, AboutPage, ResumePage, ContactPage)
+- `src/routes.tsx` — route definitions (using React Router)
+
+### 3) Build core UI
+- Create a responsive `Header` with nav links (Home, Projects, About, Resume, Contact).
+- Build `HomePage` with:
+  - hero section (name + role + CTA)
+  - featured projects section (cards)
+  - skills/tech summary section
+  - quick bio section
+- Create `ProjectsPage` that renders cards for all projects with links to detail modal/page.
+- Add `AboutPage` and `ResumePage` using structured data from your CV.
+- Add `ContactPage` with a simple contact form / mailto link.
+
+### 4) Add data content
+- Seed `src/data/projects.ts` with the three core projects (Robo Advisor, Ecom Analytics, CopilotV2).
+- Add secondary CV projects (Chatbot, Regression Suite, Product Matching) as “Other projects” or “Additional work”.
+- Add work experience / education content to the About / Resume pages.
+
+### 5) Styling and Polish
+- Use CSS Modules or Tailwind (optional) for clean, consistent styling.
+- Ensure mobile responsiveness and accessibility (alt text, buttons, focus states).
+- Add subtle animations (hover states, transitions) without impacting performance.
+
+---
+
+## ✅ Next action (your choice)
+- Run the **scaffold command** above to create the React + Vite project.
+- Once done, share the `portfolio` folder contents so I can help implement the pages/components.
+- If you want me to generate the initial `projects.ts` data file and component skeletons, say “generate starter files”.
