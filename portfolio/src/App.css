@@ -52,7 +52,19 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 20;
+}
+
+/* backdrop-filter on the header itself would make it a containing block
+   for position:fixed children, breaking the mobile drawer.
+   Use a pseudo-element instead so the blur works without that side-effect. */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .header-inner {
