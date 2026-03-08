@@ -1,0 +1,9 @@
+{
+  "name": "seif-portfolio",
+  "private": true,
+  "scripts": {
+    "build": "cd portfolio && npm run build",
+    "dev": "cd portfolio && npm run dev",
+    "preview": "cd portfolio && npm run preview"
+  }
+}
