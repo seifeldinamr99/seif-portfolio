@@ -6,53 +6,73 @@ export function AboutPage() {
           <header className="section-header">
             <h1>About</h1>
             <p>
-              I’m a computer science student with practical experience building full-stack systems, data pipelines, and test automation.
-              I enjoy turning complex requirements into intuitive products and working closely with stakeholders to deliver business value.
+              I combine product thinking with engineering discipline to build tools that move teams and businesses forward.
+              I enjoy working across the stack — from backend APIs and data pipelines to frontend experiences and automation.
             </p>
           </header>
 
-          <div className="grid grid--2">
-            <div>
-              <h2>Work experience</h2>
+          <div className="grid grid--3">
+            <article className="card">
+              <h2>Work highlights</h2>
               <ul className="list">
                 <li>
                   <strong>Founder’s Associate</strong> — i’SUPPLY (Jan 2025 – Sep 2025)
                   <ul className="list--nested">
-                    <li>Led go-to-market work for RX Network (pharmacy + insurance checkout system).</li>
-                    <li>Gathered pharmacy leads and supported partner onboarding (MetLife, MedRight, EgyCare, SehaOne).</li>
-                    <li>Collaborated with product owners to define requirements for the RX Network system.</li>
+                    <li>Owned GTM for RX Network (pharmacy + insurance checkout).</li>
+                    <li>Onboarded partners (MetLife, MedRight, EgyCare, SehaOne).</li>
+                    <li>Defined product requirements with stakeholders.</li>
                   </ul>
                 </li>
                 <li>
                   <strong>Software Tester</strong> — i’SUPPLY (Jun 2024 – Dec 2024)
                   <ul className="list--nested">
-                    <li>Performed manual and regression testing for new marketplace features.</li>
-                    <li>Built Appium automation scripts for the Flutter app.</li>
+                    <li>Built Appium automation for mobile marketplace regression suites.</li>
+                    <li>Validated new features across releases and integrated into CI.</li>
                   </ul>
                 </li>
                 <li>
                   <strong>Account Executive</strong> — Rabbit Experience (Jul 2023 – May 2024)
                   <ul className="list--nested">
-                    <li>Managed client accounts across multiple industries (TMG, Instapay, Mabany Edris, Walk of Cairo, Didi).</li>
-                    <li>Coordinated briefs, deliverables, and deadlines to meet client expectations.</li>
+                    <li>Managed campaigns for clients like TMG, Instapay, and Didi.</li>
+                    <li>Coordinated deliverables, timelines, and stakeholder expectations.</li>
                   </ul>
                 </li>
               </ul>
-            </div>
+            </article>
 
-            <div>
-              <h2>Education & skills</h2>
+            <article className="card">
+              <h2>Education</h2>
               <p>
-                <strong>Egyptian EUI | Faculty of Computing and Information Sciences</strong><br />
-                Bachelor’s degree (Nov 2022 – Present)
+                <strong>Egyptian EUI</strong> — Faculty of Computing & Information Sciences
               </p>
-              <p>
-                <strong>Skills:</strong> Python, C/C++, Scala, React, TypeScript, FastAPI, Django, SQL, Docker, testing automation, data analysis.
+              <p>Computer Science student focused on systems, automation, and data solutions.</p>
+              <p className="muted">Expected graduation: 2026</p>
+            </article>
+
+            <article className="card">
+              <h2>Skills & tools</h2>
+              <div className="tag-grid">
+                {[
+                  "Python",
+                  "TypeScript",
+                  "React",
+                  "FastAPI",
+                  "Django",
+                  "SQL",
+                  "Docker",
+                  "CI/CD",
+                  "Testing",
+                  "Data Engineering",
+                ].map((skill) => (
+                  <span key={skill} className="tag">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+              <p className="muted" style={{ marginTop: "1rem" }}>
+                Languages: Arabic (native), English (fluent), French (fluent).
               </p>
-              <p>
-                <strong>Languages:</strong> Arabic (native), English (fluent), French (fluent).
-              </p>
-            </div>
+            </article>
           </div>
         </div>
       </section>
